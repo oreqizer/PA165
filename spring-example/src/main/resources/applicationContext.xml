@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+">
+
+    <bean name="productDao" class="cz.muni.fi.pa165.ProductDaoImpl"/>
+
+    <!--bean name="productService" class="cz.muni.fi.pa165.ProductServiceImpl">
+        <property name="productDao" ref="productDao"/>
+    </bean-->
+
+    <bean name="productService" class="cz.muni.fi.pa165.ProductServiceImpl">
+        <constructor-arg ref="productDao"/>
+    </bean>
+
+</beans>
